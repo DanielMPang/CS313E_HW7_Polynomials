@@ -222,10 +222,10 @@ def main():
         q.insert_term(coeff, exp)
     # get sum of p and q as a new linked list and print sum
     sum_poly = p.add(q)
-    print("Sum:", sum_poly)
+    print(sum_poly)
     # get product of p and q as a new linked list and print product
     product_poly = p.mult(q)
-    print("Product:", product_poly)
+    print(product_poly)
 
 if __name__ == "__main__":
     main()
