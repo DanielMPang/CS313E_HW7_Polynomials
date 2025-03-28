@@ -207,7 +207,8 @@ def main():
     Get the sum and product of p and q, and print the results.
     """
     # read data from stdin (terminal/file) using input() and create polynomial p
-    data = sys.stdin.read().strip().split("\n")
+    data = [line for line in
+            sys.stdin.read().strip().split("\n") if line.strip()]  # Remove empty lines
     p = LinkedList()
     num_terms_p = int(data[0])  # Number of terms in polynomial p
     for i in range(1, num_terms_p + 1):
