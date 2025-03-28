@@ -209,15 +209,15 @@ def main():
     # read data from stdin (terminal/file) using input() and create polynomial p
     data = sys.stdin.read().strip().split("\n")
     p = LinkedList()
-    p_terms = data[0].split()
-    for term in p_terms:
-        coeff, exp = map(int, term.split(","))
+    num_terms_p = int(data[0])  # Number of terms in polynomial p
+    for i in range(1, num_terms_p + 1):
+        coeff, exp = map(int, data[i].split())
         p.insert_term(coeff, exp)
     # read data from stdin (terminal/file) using input() and create polynomial q
     q = LinkedList()
-    q_terms = data[1].split()
-    for term in q_terms:
-        coeff, exp = map(int, term.split(","))
+    num_terms_q = int(data[num_terms_p + 1])  # Number of terms in polynomial q
+    for i in range(num_terms_p + 2, num_terms_p + 2 + num_terms_q):
+        coeff, exp = map(int, data[i].split())
         q.insert_term(coeff, exp)
     # get sum of p and q as a new linked list and print sum
     sum_poly = p.add(q)
